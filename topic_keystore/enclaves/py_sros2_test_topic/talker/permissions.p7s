@@ -1,0 +1,80 @@
+MIME-Version: 1.0
+Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----F61358DAD8225CCC87410FB78A09BE2C"
+
+This is an S/MIME signed message
+
+------F61358DAD8225CCC87410FB78A09BE2C
+Content-Type: text/plain
+
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.omg.org/spec/DDS-SECURITY/20170901/omg_shared_ca_permissions.xsd">
+  <permissions>
+    <grant name="/py_sros2_test_topic/talker">
+      <subject_name>CN=/py_sros2_test_topic/talker</subject_name>
+      <validity>
+        <not_before>2023-04-24T21:04:01</not_before>
+        <not_after>2033-04-22T21:04:01</not_after>
+      </validity>
+      <allow_rule>
+        <domains>
+          <id>0</id>
+        </domains>
+        <publish>
+          <topics>
+            <topic>rt/topic</topic>
+            <topic>rt/rosout</topic>
+            <topic>rt/parameter_events</topic>
+            <topic>rt/tf</topic>
+            <topic>*/minimal_publisher/*</topic>
+          </topics>
+        </publish>
+        <subscribe>
+          <topics>
+            <topic>rt/parameter_events</topic>
+            <topic>*/minimal_publisher/*</topic>
+          </topics>
+        </subscribe>
+      </allow_rule>
+      <allow_rule>
+        <domains>
+          <id>0</id>
+        </domains>
+        <publish>
+          <topics>
+            <topic>ros_discovery_info</topic>
+          </topics>
+        </publish>
+        <subscribe>
+          <topics>
+            <topic>ros_discovery_info</topic>
+          </topics>
+        </subscribe>
+      </allow_rule>
+      <default>DENY</default>
+    </grant>
+  </permissions>
+</dds>
+
+------F61358DAD8225CCC87410FB78A09BE2C
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+
+MIIC+QYJKoZIhvcNAQcCoIIC6jCCAuYCAQExDzANBglghkgBZQMEAgEFADALBgkq
+hkiG9w0BBwGgggE+MIIBOjCB4qADAgECAhQXGNnQ5SN4D/XC17Y0e8L5Rppp8TAK
+BggqhkjOPQQDAjASMRAwDgYDVQQDDAdzcm9zMkNBMB4XDTIzMDQyNDIxMDExN1oX
+DTMzMDQyMjIxMDExN1owEjEQMA4GA1UEAwwHc3JvczJDQTBZMBMGByqGSM49AgEG
+CCqGSM49AwEHA0IABKymNrNuTTyWRg46ndiD5JUasg1Grd72YZGVqOgj3sj5dXdE
+g9vmGWCpZ3I72TmAMrsKFFwqdRm5d0obd+ssRp6jFjAUMBIGA1UdEwEB/wQIMAYB
+Af8CAQEwCgYIKoZIzj0EAwIDRwAwRAIgF/t0v9MSPfsFRDarPxHeRf+AbB87ZD5S
+rrXuJIJaLkYCIH40LLEtu7RsnSynmHgCxM+d0ZwIfI337OtV4PCtfPNvMYIBfzCC
+AXsCAQEwKjASMRAwDgYDVQQDDAdzcm9zMkNBAhQXGNnQ5SN4D/XC17Y0e8L5Rppp
+8TANBglghkgBZQMEAgEFAKCB5DAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwG
+CSqGSIb3DQEJBTEPFw0yMzA4MDEyMTU1MzhaMC8GCSqGSIb3DQEJBDEiBCDt6gNx
+ihdBMdIhv9gNRmaugiyb1GfEmwRUn43UrTjNFzB5BgkqhkiG9w0BCQ8xbDBqMAsG
+CWCGSAFlAwQBKjALBglghkgBZQMEARYwCwYJYIZIAWUDBAECMAoGCCqGSIb3DQMH
+MA4GCCqGSIb3DQMCAgIAgDANBggqhkiG9w0DAgIBQDAHBgUrDgMCBzANBggqhkiG
+9w0DAgIBKDAKBggqhkjOPQQDAgRIMEYCIQCbMa7xYb5Be1tGSj49xeARqTHcLnOk
+Cguw4ltVblaaogIhAOXK585DIl9hPKjN/lFZHJLB+NhvX+KyY4720uiemAyB
+
+------F61358DAD8225CCC87410FB78A09BE2C--
+

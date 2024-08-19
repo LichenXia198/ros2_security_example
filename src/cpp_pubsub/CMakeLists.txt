@@ -15,8 +15,11 @@ find_package(tf2_ros REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 add_executable(listener_test src/listener_test.cpp)
+add_executable(talker src/publisher_member_function.cpp)
 ament_target_dependencies(listener_test rclcpp std_msgs tf2_ros)
+ament_target_dependencies(talker rclcpp std_msgs)
 install(TARGETS
+  talker
   listener_test
   DESTINATION lib/${PROJECT_NAME})
 if(BUILD_TESTING)
