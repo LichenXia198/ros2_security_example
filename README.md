@@ -1,2 +1,5 @@
 # ros2_security_example
  
+The node 'first_listener' is launched with the command ros2 run cpp_pubsub listener_test --ros-args --enclave /py_sros2_test_topic/listener1. The secure enclave listener1 only allows subscribing to the topic 'topic'. While 'first_listener' is running, suppose another secure enclave, talker2, is leaked to it. For example, an attacker might distribute the enclave from another device to the device on which the node 'first_listener' is running. This would allow the creation of a new context and a new node with the secure enclave talker2. The new node talker2 would then have permission to publish to the topic 'chatter', even though its parent ('first_listener') has no permission to the topic 'chatter'. In a secure OS, a process should not be allowed to create a child process that has more permissions than its parent by any means. Similarly, if we view ROS2 from an 'OS-like' perspective and apply the same principle, a node should not be able to create a child node that has more permissions to topics (even if a new context is created for the node). This example clearly violates that principle.
+
+All the enclaves are in the /topic_keystore.
